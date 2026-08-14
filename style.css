@@ -1,120 +1,179 @@
+/* 1. Global Box-Sizing Reset */
 * {
-    /* margin: 0; */
-    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: blanchedalmond;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.All{
-    display:flex ;
-    padding: 40px;
+/* 2. Container Layout */
+.All {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
     color: white;
-    /* width: 95%; */
-    /* height: 500px; */
-    /* padding: 100px 15px; */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden; /* Keeps rounded corners clean */
 }
 
-.welcome, .login{
+.welcome, .login {
     flex: 1;
-    padding: 50px;
+    padding: 40px 30px;
     text-align: center;
 }
 
 .welcome {
     background-color: blueviolet;
-    border-radius: 15px 0px 0px 15px;
-}
-.welcome p {
-    font-weight: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.welcome img{
+.welcome p {
+    font-weight: 100;
+    margin-top: 8px;
+}
+
+.welcome img {
     width: 60%;
+    max-width: 220px;
+    margin-top: 20px;
 }
 
 .login {
     background-color: #f7f8f9;
     color: black;
-    border-radius: 0px 15px 15px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login h1 {
+    margin-bottom: 15px;
+}
+
+.inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 input {
     border: none;
     border-bottom: 1.5px solid rgb(177, 177, 177);
     outline: none;
-    background-color: #f7f8f9;
-    margin: 10px;
-    width: 80%;
+    background-color: transparent;
+    margin: 10px 0;
+    width: 90%;
     padding: 10px;
+    font-size: 14px;
 }
 
+/* Fixed percentage padding issue */
 button {
-    background-color:#572cc6;
+    background-color: #572cc6;
     color: white;
-    margin-top: 12px;
-    padding: 12px 35%;
+    margin: 15px auto;
+    width: 90%;
+    padding: 12px 0;
     outline: none;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.19s ease-in;
+    font-size: 16px;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 button:hover {
     background-color: #371b7e;
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .icons {
     display: flex;
     justify-content: center;
-    gap: 15px; /* مسافة بين الزرارين */
+    gap: 15px;
     margin: 15px 0;
 }
 
 .icon-btn {
-  width: 30px;
-  height: 30px;
-  background-color: #eeeff1;
-  border-radius: 50%; /* بيخليهم على شكل دائرية */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 20px;
-  transition: transform 0.2s, background-color 0.2s;
+    width: 40px;
+    height: 40px;
+    background-color: #eeeff1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
-/* ألوان الأيقونات عند التحديد */
 .facebook { color: #1877f2; }
 .google { color: #ea4335; }
 
-/* تأثير بسيط لما تحرك الماوس عليهم */
 .icon-btn:hover {
-  transform: scale(1.1);
-  background-color: #e4e6eb;
+    transform: scale(1.1);
+    background-color: #e4e6eb;
 }
-
 
 .no-account {
     display: flex;
     align-items: center;
-    text-align: center;
     justify-content: center;
     gap: 5px;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 .signup {
     text-decoration: none;
     color: #1a5fb9;
-    transition: 0.1s;
+    font-weight: bold;
+    transition: color 0.1s;
 }
 
 .signup:hover {
     color: #154c94;
-    transform: scale(1.019);
+}
+
+/* ==========================================
+   3. Mobile Responsiveness (Screen <= 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .All {
+        flex-direction: column; /* Stack welcome section above login */
+    }
+
+    .welcome {
+        padding: 30px 20px;
+    }
+
+    .welcome img {
+        width: 40%; /* Shrink image on mobile to save vertical space */
+    }
+
+    .login {
+        padding: 30px 20px;
+    }
+
+    input, button {
+        width: 100%; /* Take full container width on small screens */
+    }
 }
