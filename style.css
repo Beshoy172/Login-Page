@@ -1,0 +1,120 @@
+* {
+    /* margin: 0; */
+    
+}
+
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+    background-color: blanchedalmond;
+}
+
+.All{
+    display:flex ;
+    padding: 40px;
+    color: white;
+    /* width: 95%; */
+    /* height: 500px; */
+    /* padding: 100px 15px; */
+}
+
+.welcome, .login{
+    flex: 1;
+    padding: 50px;
+    text-align: center;
+}
+
+.welcome {
+    background-color: blueviolet;
+    border-radius: 15px 0px 0px 15px;
+}
+.welcome p {
+    font-weight: 100;
+}
+
+.welcome img{
+    width: 60%;
+}
+
+.login {
+    background-color: #f7f8f9;
+    color: black;
+    border-radius: 0px 15px 15px 0px;
+}
+
+input {
+    border: none;
+    border-bottom: 1.5px solid rgb(177, 177, 177);
+    outline: none;
+    background-color: #f7f8f9;
+    margin: 10px;
+    width: 80%;
+    padding: 10px;
+}
+
+button {
+    background-color:#572cc6;
+    color: white;
+    margin-top: 12px;
+    padding: 12px 35%;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.19s ease-in;
+}
+
+button:hover {
+    background-color: #371b7e;
+    transform: scale(1.1);
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* مسافة بين الزرارين */
+    margin: 15px 0;
+}
+
+.icon-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #eeeff1;
+  border-radius: 50%; /* بيخليهم على شكل دائرية */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* ألوان الأيقونات عند التحديد */
+.facebook { color: #1877f2; }
+.google { color: #ea4335; }
+
+/* تأثير بسيط لما تحرك الماوس عليهم */
+.icon-btn:hover {
+  transform: scale(1.1);
+  background-color: #e4e6eb;
+}
+
+
+.no-account {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.signup {
+    text-decoration: none;
+    color: #1a5fb9;
+    transition: 0.1s;
+}
+
+.signup:hover {
+    color: #154c94;
+    transform: scale(1.019);
+}
